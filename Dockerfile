@@ -19,7 +19,8 @@ ENV       MAX_UPDATES_PER_SECOND 500
 # Entry point script also sets environment variables in config files.
 COPY      docker-entrypoint.sh /
 
-# Graphiteweb requires access to this folder
+# Graphiteweb requires access to this folder and should be mounted to host
+# for persistence.
 VOLUME    /opt/graphite/storage/whisper/
 
 EXPOSE    2003 2004 7002

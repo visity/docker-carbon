@@ -16,7 +16,7 @@ if [ "$1" = '/opt/graphite/bin/carbon-cache.py' ]; then
 		chown -R carbon:carbon /opt/graphite
 fi
 
-# As argument is not related to gunicorn,
+# As argument is not related to carbon,
 # then assume that user wants to run his own process,
 # for example a `bash` shell to explore this image
 exec "$@"
