@@ -6,8 +6,8 @@ COPY      config /tmp/config
 RUN       addgroup --gid 30100 carbon
 RUN       useradd -u 30106 -g carbon -s /bin/false carbon
 
-RUN       pip install twisted==11.1.0 whisper==0.9.12
-RUN       pip install --install-option="--prefix=/opt/graphite" carbon==0.9.12
+RUN       pip install twisted==11.1.0 whisper==0.9.15
+RUN       pip install --install-option="--prefix=/opt/graphite" carbon==0.9.15
 
 # Copy configs into place and create needed dirs
 COPY      config/ /opt/graphite/conf/
