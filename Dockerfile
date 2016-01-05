@@ -1,13 +1,12 @@
 FROM      python:2.7
 
-COPY      config /tmp/config
-
 # Create users. Note carbon user has same uid as the one in visity/graphiteweb
 RUN       addgroup --gid 30100 carbon
 RUN       useradd -u 30106 -g carbon -s /bin/false carbon
 
-RUN       pip install twisted==11.1.0 whisper==0.9.12
-RUN       pip install --install-option="--prefix=/opt/graphite" carbon==0.9.12
+RUN       pip install --install-option="--prefix=/opt/graphite" git+git://github.com/graphite-project/carbon.git@eeba61142edcae4af13dca03765188bb13a26c5d
+COPY      requirements.txt /tmp/
+RUN       pip install -r /tmp/requirements.txt
 
 # Copy configs into place and create needed dirs
 COPY      config/ /opt/graphite/conf/

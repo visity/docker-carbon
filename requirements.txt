@@ -1,0 +1,4 @@
+# These packages are from the requirements.txt file but with some fixed version numbers. 
+Twisted>=13.2.0
+git+git://github.com/graphite-project/whisper.git@876f2eb966a3f3a26923601cfc6495b9ae742e94
+mocker==1.1.1
